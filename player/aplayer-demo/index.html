@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="Zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: #f1f1f1;
+            background-image: url('http://img.netbian.com/file/2018/1226/0f1b24fcb0db43223c35f8abf02d89a7.jpg')
+        }
+        /* 添加以下样式，则定位左上角 */
+        .aplayer-fixed{
+            top: 0 !important;
+            z-index: 99999 !important;
+            height: 0 !important;
+        }
+        .aplayer-body{
+            top: 0px !important;
+            max-height: 66px !important;
+        }
+        .aplayer-fixed .aplayer-list{
+            margin-top: 66px !important; 
+            margin-bottom: 0 !important;
+            background-color: #fff;
+        }
+        /* 添加以上样式，则定位左上角 */
+        /*以下样式使播放器定位在猫live2d的头顶*/
+        /* .aplayer-fixed{
+            bottom: 220px !important;
+            z-index: 99999 !important;
+        }
+        .aplayer-body{
+            bottom: 220px !important;
+        } */
+        .ap-hover{
+            left: -66px !important;
+        }
+        .ap-hover:hover{
+            left: 0 !important;
+        }
+        /* 调整歌词总高度 */
+        .aplayer-lrc{
+            height: 80px !important;
+            background-color: rgba(0,0,0,0) !important;
+            z-index: 99999 !important;
+        }
+        /* 正在排队的歌词 */
+        .aplayer-lrc p{
+            color: #666 !important;
+        }
+        /* 正在唱歌的歌词 */
+        .aplayer-lrc p.aplayer-lrc-current{
+            color: #009688 !important;
+            font-size: 30px;
+            padding: 10px 0 !important;
+            /* line-height: 30px !important; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="aplayer">
+        <!-- 每个aplayer-lrc-content就是每一首歌的歌词 -->
+        <pre class="aplayer-lrc-content">
+            [ti:もぎたての憂鬱]
+            [ar:矢井田瞳]
+            [al:もぎたての憂鬱]
+            [by:Music_ya]
+            [00:00.43]「もぎたての憂鬱」
+            [00:02.43]作詞∶矢井田瞳
+            [00:04.43]作曲∶矢井田瞳
+            [00:06.43]歌∶矢井田瞳
+            [00:08.43]馬鹿らしくなって戻りすぎる
+            [00:11.43]詰め寄った距離が白を切る
+            [00:15.43]しくなって戻り
+            [00:19.43]嬉しくて作
+            [00:23.43]息を切らして満たされたくて
+            [00:26.25]亀裂を埋めては日が暮れる
+            [00:29.18]何が嬉しくて作り笑って
+            [00:32.06]馬鹿らしくなって戻りすぎる
+            [00:35.05]偏頭痛と変な咳が
+            [00:37.85]出続けるけど慣れてしまう
+            [00:40.73]つぎはぎでもほころびても
+            [00:43.77]なんとかなっちゃう残酷さ
+            [00:46.57]
+            [00:47.45]詰め寄った距離が白を切る
+            [00:52.17]弱さを照らす月明かり
+            [00:56.09]oh　これ以上私を待たせないで
+            [01:03.36]届かない夢なら　早く始末して
+            [01:08.12]漂った　もぎたての憂鬱よ
+            [01:14.92]
+            [01:25.01]枯れた花に水をあげても
+            [01:27.65]歯痒い季節は膨らんだ
+            [01:30.52]蹴散らしたって積乱雲が
+            [01:33.51]心の真上にやってくる
+            [01:36.41]上澄みだけじゃ幸せなんて
+            [01:39.36]離れて行くと思うんです
+            [01:42.19]忙しそうに時をこなして
+            [01:45.20]「そのうちやる」っていつなんだ
+            [01:48.35]
+            [01:48.95]大したリスクも背負わないで
+            [01:53.71]一体何が出来るの
+            [01:57.71]oh　これ以上後回しにしないで
+            [02:04.91]何をそんなにためらう事があるの
+            [02:09.70]掴めない　じれったいデジャヴよ
+            [02:15.80]
+            [02:40.60]oh　こんなに近くで感じているのに
+            [02:47.32]遠くの空に見とれたその瞳の奥
+            [02:52.29]終わりにしようか..　もぎたての憂鬱よ
+            [03:00.75]
+            [03:05.75]収録∶もぎたての憂鬱／発売日∶2012/07/11
+            [03:10.75]
+            [03:15.75]www.90lrc.cn ★ VINE 制作
+            [03:20.75]終わり
+            [03:22.75]  
+            <!-- ... -->
+        </pre>
+        <pre class="aplayer-lrc-content">
+            [ti:むすんで ひらいて]
+            [ar:ティーナ・カリーナ]
+            [al:ティーナ・カリーナ]
+            [by:Vine]
+            [00:00.32]「むすんで ひらいて」
+            [00:04.32]作詞∶ティーナ・カリーナ
+            [00:06.32]作曲∶ティーナ・カリーナ/nakaokaan
+            [00:08.32]歌∶ティーナ・カリーナ
+            [00:10.32]
+            [00:12.32]目を閉じて よみがえる
+            [00:24.59]さっきまで ここにあったもの
+            [00:36.18]
+            [00:37.30]薄暗い街に 光灯るまで
+            [00:49.75]むすんで ひらいて 繋いだ手のひらで
+            [01:02.08]確かめ合うよ 今ここで生きていること
+            [01:14.70]むすんで ひらいて 繋がる手のひらで
+            [01:27.12]感じていたいよ 君のことを一番近く
+            [01:42.35]
+            [01:46.76]小さな願いを 重ねて 光を届けたい
+            [02:09.87]
+            [02:10.73]むすんで ひらいて 繋いだ手のひらで
+            [02:22.93]確かめ合うよ 今ここで生きていること
+            [02:35.63]むすんで ひらいて 凍える手のひらを
+            [02:47.88]あたためたいよ また笑顔で歩ける日まで
+            [03:02.42]ひとにぎりの 愛を込めて
+            [03:12.29]
+            [03:20.29]☆→Lrc By VINE ∞ Hell's Gate LRC Team←★
+            [03:30.29]終わり
+            [03:45.29]
+            <!-- ... -->
+        </pre>
+    </div>
+
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+    <script>
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            listFolded: false,
+            listMaxHeight: 90,
+            // lrcType: 3,
+            lrcType: 2,
+            fixed: true,
+            //音乐数据json数组
+            audio: [{
+                name: 'PLANET-ラムジ',
+                artist: 'ラムジ',
+                url: 'http://www.ytmp3.cn/down/49846.mp3',
+                cover: 'http://img.ytmp3.cn/image/29.jpg',
+                // lrc: 'http://a7a7.net/blog/usr/down/Lyric/33911781.lrc'
+            },
+            {
+                name: '秋樱',
+                artist: '山口百恵',
+                url: 'http://www.ytmp3.cn/down/56259.mp3',
+                cover: 'http://q1.qlogo.cn/g?b=qq&nk=2425864224&s=100&t=1545840935',
+                // lrc: 'http://s.geci.me/lrc/283/28370/2837015.lrc'
+            }]
+        });
+
+        if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+            document.querySelector('#aplayer').style.display = 'none'
+        }
+
+        ap.lrc.hide()
+        ap.on('play',()=>{
+            ap.lrc.show()
+        })
+        ap.on('pause',()=>{
+            ap.lrc.hide()
+        })
+
+        let aplayerBody = document.querySelector('.aplayer-body')
+        aplayerBody.className += " ap-hover";
+        document.querySelector('.aplayer-miniswitcher').onclick = () => {
+            if(aplayerBody.className.indexOf("ap-hover") >= 0 ){
+                aplayerBody.className = aplayerBody.className.replace("ap-hover","")
+            }else{
+                aplayerBody.className += " ap-hover";
+            }          
+        }
+    </script>
+</body>
+
+</html>
