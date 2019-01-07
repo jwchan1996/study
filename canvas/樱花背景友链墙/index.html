@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #app{
+            /* height: 100vh; */
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(#009688,#1ABC9C)
+        }
+
+        .container-links{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap
+        }
+        .container-links-item{
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        @media screen and (max-width: 440px){
+            .container-links-item{
+                width: 100%;
+            }
+        }
+        .container-links-item:hover{
+            background-color: #f1f1f1;
+        }
+        .links-item-avatar{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            padding: 20px;
+        }
+        .links-item-about{
+            position: relative;
+            text-align: left;
+        }
+        .links-item-username{
+            margin: 0;
+            color: #515151;
+            padding-top: 20px; 
+        }
+        .links-item-intro{
+            margin: 10px 0;
+            font-size: 14px;
+            color: #515151;
+        }
+        /* body{
+            background: rgba(255, 255, 255, 0.5);
+        } */
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <p style="font-size:24px;color:#009688">友人帐</p>
+    <div class="container-links">
+        <a class="container-links-item" href="https://jwchan.cn" target="_blank">
+            <img class="links-item-avatar" src="https://www.jwchan.cn/images/avatar.jpg" alt="">
+            <div class="links-item-about">
+                <h4 class="links-item-username">北熙宝宝</h4>
+                <p class="links-item-intro">一个热爱二次元的孩子~</p>
+            </div>  
+        </a>
+        <a class="container-links-item" href="https://jwchan.cn" target="_blank">
+            <img class="links-item-avatar" src="https://www.jwchan.cn/images/avatar.jpg" alt="">
+            <div class="links-item-about">
+                <h4 class="links-item-username">JwChan</h4>
+                <p class="links-item-intro">这个人很懒，什么都没留下~</p>
+            </div>  
+        </a>
+        <a class="container-links-item" href="https://jwchan.cn" target="_blank">
+            <img class="links-item-avatar" src="https://www.jwchan.cn/images/avatar.jpg" alt="">
+            <div class="links-item-about">
+                <h4 class="links-item-username">One_of_six</h4>
+                <p class="links-item-intro">你听说过肥仔快乐水吗~</p>
+            </div>  
+        </a>
+        <a class="container-links-item" href="https://jwchan.cn" target="_blank">
+            <img class="links-item-avatar" src="https://www.jwchan.cn/images/avatar.jpg" alt="">
+            <div class="links-item-about">
+                <h4 class="links-item-username">我爱盐酥鸡</h4>
+                <p class="links-item-intro">我真的还想再活五百年~</p>
+            </div>  
+        </a>
+        <a class="container-links-item" href="https://jwchan.cn" target="_blank">
+            <img class="links-item-avatar" src="https://www.jwchan.cn/images/avatar.jpg" alt="">
+            <div class="links-item-about">
+                <h4 class="links-item-username">飘香豆腐</h4>
+                <p class="links-item-intro">stay hungry~</p>
+            </div>  
+        </a>
+    </div>
+    <script src="sakura.js"></script>
+</body>
+</html>
