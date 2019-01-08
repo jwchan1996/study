@@ -5,18 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>vue-router</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+        body,html{
+            text-align: center;
+        }
+        .a-link{
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            background-color: #009688;
+            color: #fff; 
+        }
+        .a-link:hover{
+            background-color: #F2AA24;
+        }
+        /*没有数据，正在加载*/
+        .loading{
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .loading img{
+            height: 40px;
+            width: 40px;
+            animation: que 1.6s linear infinite;
+        }
+        @keyframes que{
+            /*以百分比来规定改变发生的时间 也可以通过"from"和"to",等价于0% 和 100%*/
+            0%{
+                /*rotate(2D旋转) scale(放大或者缩小) translate(移动) skew(翻转)*/
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div id="app">
-        <h1>Hello App!</h1>
+    <div id="app" v-cloak>
+        <h1>Hello SPA App!</h1>
         <p>
             <!-- 使用 router-link 组件来导航. -->
             <!-- 通过传入 `to` 属性指定链接. -->
             <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-            <router-link to="/foo">Go to Foo</router-link>
-            <router-link to="/bar">Go to Bar</router-link>
-            <router-link to="/user">Go to User</router-link>
+            <router-link to="/photo" class="a-link">Go to Photo</router-link>
+            <router-link to="/album" class="a-link">Go to Album</router-link>
+            <router-link to="/user" class="a-link">Go to User</router-link>
         </p>
         <!-- 路由出口 -->
         <!-- 路由匹配到的组件将渲染在这里 -->
@@ -30,8 +72,56 @@
 
     // 1. 定义 (路由) 组件。
     // 可以从其他文件 import 进来
-    const Foo = { template: '<div>foo</div>' }
-    const Bar = { template: '<div>bar</div>' }
+    const Photo = {
+        data: function () {
+            return {
+                photos: []
+            }
+        },
+        template: `<div>
+                       <div class='loading' v-if="!photos.length">
+                           <img src='./image/loading.png'>
+                       </div>
+                       <div v-for="photo in photos">
+                           <div>{{photo.title}}</div>
+                           <img :src="photo.thumbnailUrl">
+                           <img :src="photo.url">
+                       </div>
+                   </div>`
+        ,
+        mounted(){
+            fetch('http://jsonplaceholder.typicode.com/photos?id=1')
+            .then(response => response.json()
+            ).then(json => {
+                this.photos = json
+                console.log(this.photos)
+            })
+        }
+    }
+    const Album = { 
+        data: function () {
+            return {
+                albums: []
+            }
+        },
+        template: `<div>
+                       <div class='loading' v-if="!albums.length">
+                           <img src='./image/loading.png'>
+                       </div>
+                       <div v-for="album in albums">
+                           <div>{{album.title}}</div>
+                       </div>
+                   </div>`
+        ,
+        mounted(){
+            fetch('http://jsonplaceholder.typicode.com/albums?userId=1')
+            .then(response => response.json()
+            ).then(json => {
+                this.albums = json
+                console.log(this.albums)
+            })
+        }
+    }
     const User = {
         data: function () {
             return {
@@ -39,6 +129,9 @@
             }
         },
         template: `<div>
+                       <div class='loading' v-if="!users.length">
+                           <img src='./image/loading.png'>
+                       </div>
                        <div v-for="user in users">
                            <div>{{user.name}}</div>
                        </div>
@@ -60,8 +153,8 @@
     // 或者，只是一个组件配置对象。
     // 我们晚点再讨论嵌套路由。
     const routes = [
-        { path: '/foo', component: Foo },
-        { path: '/bar', component: Bar },
+        { path: '/photo', component: Photo },
+        { path: '/album', component: Album },
         { path: '/user', component: User }
     ]
 
