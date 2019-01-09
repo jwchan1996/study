@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚动条样式</title>
+    <style>
+        body,html{
+            text-align: center;
+            /*IE只能修改滚动条颜色*/
+            /*三角箭头的颜色*/
+            scrollbar-arrow-color: #F2AA24;
+            /*滚动条滑块按钮的颜色*/
+            scrollbar-face-color: #009688;
+            /*滚动条整体颜色*/
+            scrollbar-highlight-color: #fff;
+            /*滚动条阴影*/
+            scrollbar-shadow-color: #009688;
+            /*滚动条轨道颜色*/
+            scrollbar-track-color: #fff;
+        }
+        .box{
+            margin: 10px auto;
+            height: 100px;
+            width: 200px;
+            background-color: #009688;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+        }
+        /*chrome可以修改全部参数，IE只能修改颜色*/
+        /*滚动条整体部分,必须要设置*/
+        ::-webkit-scrollbar{
+            width: 6px;
+            height: 10px;
+            background-color: #fff;
+        }
+        /*滚动条的轨道*/
+        ::-webkit-scrollbar-track{
+            box-shadow: inset 0 0 5px #fff;
+            background-color: #fff;
+        }
+        /*滚动条的滑块按钮*/
+        ::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            background-color: #009688;
+            box-shadow: inset 0 0 5px #fff;
+        }
+        /*滚动条的上下两端的按钮*/
+        ::-webkit-scrollbar-button{
+            height: 0;
+            background-color: #009688;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">占位盒子</div>
+    <div class="box">改</div>
+    <div class="box">变</div>
+    <div class="box">滚</div>
+    <div class="box">动</div>
+    <div class="box">条</div>
+    <div class="box">样</div>
+    <div class="box">式</div>
+    <div class="box">chrome 能自定义所有样式</div>
+    <img src="./image/scrollbar-chrome.png" alt="">
+    <div class="box">IE 只能改变颜色</div>
+    <img src="./image/scrollbar-IE.png" alt="">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
