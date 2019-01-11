@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一个简单的 store 模式</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app1" v-cloak>
+        这是app1的：
+        <div>{{privateState}}</div>
+        <div>{{sharedState.message}}</div>
+        <button @click="change">改变</button>
+    </div>
+
+    <br>
+
+    <div id="app2" v-cloak>
+        这是app2的：
+        <div>{{privateState}}</div>
+        <div>{{sharedState.message}}</div>
+        <button @click="change">改变</button>
+    </div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    //一个简单的 store 模式
+    var store = {
+        debug: true,
+        state: {
+            message: 'Hello!'
+        },
+        //所有 store 中 state 的改变，都放置在 store 自身的 action 中去管理
+        //这种集中式状态管理能够被更容易地理解哪种类型的 mutation 将会发生，
+        //以及它们是如何被触发。当错误出现时，我们现在也会有一个 log 记录 bug 之前发生了什么。
+        setMessageAction (newValue) {
+            if (this.debug) console.log('setMessageAction triggered with', newValue)
+            this.state.message = newValue
+        },
+        clearMessageAction () {
+            if (this.debug) console.log('clearMessageAction triggered')
+            this.state.message = ''
+        }
+    }
+
+    //每个实例/组件仍然可以拥有和管理自己的私有状态：
+    var vmA = new Vue({
+        el: "#app1",
+        data: {
+            privateState: 'app1的',
+            sharedState: store.state
+        },
+        methods: {
+            change(){
+                store.setMessageAction('666')
+            }
+        },
+    })
+
+    var vmB = new Vue({
+        el: "#app2",
+        data: {
+            privateState: 'app2的',
+            sharedState: store.state
+        },
+        methods: {
+            change(){
+                //为了规范，约定不能使用这种直接修改的方式
+                //store.state.message = "来了老弟"
+                
+                //而是所有 store 中 state 的改变，都放置在 store 自身的 action 中去管理
+                //即是统一由自身的 action 去管理
+                store.setMessageAction("来了老弟")
+            }
+        }
+    })
+</script>   
+</body>
+</html>
