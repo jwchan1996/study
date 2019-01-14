@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css实现图片内容高度撑起，避免图片加载后导致页面滚动</title>
+    <style>
+        html,body{
+            padding: 0;
+            margin: 0;
+        }
+        .img-box{
+            /*padding-top也可以*/
+            padding-bottom: 60%;  /*当它的值为百分比的时候，是按该元素的宽度来计算的，当设为100%的时候，其高度就等于自身的宽度，形成一个正方形*/
+            width: 100vw;   /*宽度为设备屏幕宽度*/
+            position: relative;
+            background-color: #009688;
+        }
+        .img-box img{
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            width:100%;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <p>css实现图片内容高度撑起，避免图片加载后导致页面滚动</div>
+    <div class="img-box">
+        <img src=""/>
+    </div>
+    <p>hhhhhhhhhhh</p>
+    <script>
+        setTimeout(()=>{
+            document.querySelector("img").src = "http://xia-dev.b0.upaiyun.com/7860df36-189a-4f33-a884-156b4e0cb32d.png"
+        },1500)
+    </script>
+</body>
+</html>
