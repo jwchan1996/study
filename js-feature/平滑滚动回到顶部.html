@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>平滑滚动回到顶部</title>
+    <style>
+        body{
+            height: 20000px;
+            background-image: url('https://jwchan.cn/images/background_header.png');
+            background-position: center 0%;
+        }
+        .back-to-top{
+            height: 50px;
+            width: 200px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #009688;
+            color: #fff;
+            position: fixed;
+            bottom: 100px;
+            right: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-to-top" onclick="smoothscroll()">回到顶部</div>
+<script>
+    function smoothscroll(){
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll > 0) {
+            //告诉浏览器您希望执行动画并请求浏览器在下一次重绘之前调用指定的函数来更新动画
+            window.requestAnimationFrame(smoothscroll);
+            window.scrollTo (0,currentScroll - (currentScroll/10));
+        }
+    }
+</script>
+</body>
+</html>
