@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>平滑滚动回到顶部2</title>
+    <style>
+        body{
+            height: 20000px;
+            background-image: url('https://jwchan.cn/images/background_header.png');
+            background-position: center 0;
+            background-size: contain;
+            background-repeat: repeat;
+        }
+        #kotori{
+            position: fixed;
+            bottom: -10px;
+            left: -10px;
+            height: 70px;
+            width: 70px;
+            cursor: pointer;
+            transition: 0.2s all;
+            display: block;
+            z-index: 100;
+        }
+        #kotori:hover{
+            transform: translate(10px,-10px)
+        }
+    </style>
+</head>
+<body>
+    <img id="kotori" src="https://jwchan.cn/images/kotori.png" onclick="smoothscroll()">
+<script>
+
+    //监听页面滚动
+    window.addEventListener("scroll",handleScroll)
+    //滚动条滚动事件处理函数
+    function handleScroll(){         
+        //获取滚动高度
+        var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //可视区域高度
+        var clientHeight = document.documentElement.clientHeight; 
+        //如果滚动高度大于可视区域高度，则显示回到顶部按钮
+        if(osTop >= clientHeight){      
+            document.querySelector('#kotori').style.display = 'block';
+        }else{         //否则隐藏
+            document.querySelector('#kotori').style.display = 'none';
+        }
+    }
+    
+    //回到顶部功能函数
+    function smoothscroll(){
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll > 0) {
+            window.requestAnimationFrame(smoothscroll);
+            window.scrollTo (0,currentScroll - (currentScroll/10));
+        }
+    }
+</script>
+</body>
+</html>
