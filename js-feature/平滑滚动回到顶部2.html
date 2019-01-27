@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>平滑滚动回到顶部2</title>
+    <style>
+        html,body{
+            height: 200000px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-image: url('https://jwchan.cn/images/background_header.png');
+            background-position: center 0px;
+            background-size: contain;
+            background-repeat: repeat;
+        }
+        #kotori{
+            position: fixed;
+            bottom: -10px;
+            left: -10px;
+            height: 70px;
+            width: 70px;
+            cursor: pointer;
+            transition: 0.2s all;
+            display: block;
+            z-index: 100;
+        }
+        #kotori:hover{
+            transform: translate(10px,-10px)
+        }
+    </style>
+</head>
+<body>
+    <img id="kotori" src="https://jwchan.cn/images/kotori.png">
+<script>
+    kotoriScrollToTop();
+    //返回顶部函数
+    function kotoriScrollToTop(){
+        var obtn = document.getElementById('kotori');  //获取回到顶部按钮的ID
+        var clientHeight = document.documentElement.clientHeight;   //获取可视区域的高度
+        var timer = null; //定义一个定时器
+        var isTop = true; //定义一个布尔值，用于判断是否到达顶部
+
+        window.addEventListener("scroll",handleScroll)
+        function handleScroll(){         //滚动条滚动事件
+            //获取滚动条的滚动高度
+            var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if(osTop >= clientHeight){  //如果滚动高度大于可视区域高度，则显示回到顶部按钮
+                obtn.style.display = 'block';
+            }else{         //否则隐藏
+                obtn.style.display = 'none';
+            }
+
+            //主要用于判断当 点击回到顶部按钮后 滚动条在回滚过程中，若手动滚动滚动条，则清除定时器
+            if(!isTop){
+
+                clearInterval(timer);
+            }
+            isTop = false;
+
+        }
+
+        obtn.onclick = function(){    //回到顶部按钮点击事件
+            //设置一个定时器
+            timer = setInterval(function(){
+                //获取滚动条的滚动高度
+                var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+                //用于设置速度差，产生缓动的效果
+                var speed = Math.floor(-osTop / 60);
+                document.documentElement.scrollTop = document.body.scrollTop = osTop + speed;
+                isTop =true;  //用于阻止滚动事件清除定时器
+                if(osTop == 0){
+                    clearInterval(timer);
+                }
+            },2);
+        }
+    }
+</script>
+</body>
+</html>
