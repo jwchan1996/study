@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ZH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>up_down_animation</title>
+    <style>
+        body{
+            background: linear-gradient(#1ABC9C,#339999);
+        }
+        #container{
+            text-align: center;
+        }
+        #sister_1,#sister_2,#Q_green{
+            animation: shake 5s infinite;
+        }
+        @keyframes shake{
+            0%{
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate(0,20px);
+            }
+        }
+        #android{
+            border-radius: 10px;
+            transition: all 0.4s;
+        }
+        #android:hover{
+            cursor: pointer;
+            transform:translateY(-2%);
+            box-shadow: 2px 4px 10px 5px #444;
+        }
+
+        #typed{
+            color: aliceblue;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="typed-strings">
+            <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+            <p>It <em>types</em> out sentences.</p>
+        </div>
+        <span id="typed"></span>
+        <img id="android" src="./image/undraw_android_jr64.svg" alt="">
+        <img id="sister_1" src="./image/mainvisual.png" alt="">
+        <img id="sister_2" src="./image/conoha--register.png" alt="">
+        <img id="Q_green" src="./image/Q_green.png" alt="">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script>
+        var typed = new Typed('#typed', {
+          stringsElement: '#typed-strings'
+        });
+    </script>
+</body>
+</html>
