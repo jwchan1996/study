@@ -20,6 +20,18 @@
             methods: {
                 getDom(e){
                     console.log(e.currentTarget.lastChild.firstChild.src)           
+                    console.log(e.currentTarget.childNodes) 
+                    let childNodes = e.currentTarget.childNodes
+                    for(let i=0;i<childNodes.length;i++){
+                        console.log(childNodes[i].childNodes)
+                        for(let j=0;j<childNodes[i].childNodes.length;j++){
+                            console.log(childNodes[i].childNodes[j].tagName)
+                            if(childNodes[i].childNodes[j].tagName == 'IMG'){
+                                // return childNodes[i].childNodes[j].src
+                                console.log(childNodes[i].childNodes[j].src)
+                            }
+                        }
+                    }          
                 }
             },
         })
