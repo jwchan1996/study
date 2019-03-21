@@ -15,15 +15,20 @@
         const app = new Vue({
             el: '#app',
             data: {
-                content: `<p>这是一段文字<br></p><p><img src="https://jwchan.cn/images/background_header.png"></p>`
+                //content: `<p>这是一段文字<br></p><p><img src="https://jwchan.cn/images/background_header.png"></p>`
+                content: `<img src="https://jwchan.cn/images/background_header.png">`
             },
             methods: {
                 getDom(e){
-                    console.log(e.currentTarget.lastChild.firstChild.src)           
+                    // console.log(e.currentTarget.lastChild.firstChild.src)           
                     console.log(e.currentTarget.childNodes) 
                     let childNodes = e.currentTarget.childNodes
                     for(let i=0;i<childNodes.length;i++){
                         console.log(childNodes[i].childNodes)
+                        if(childNodes[i].childNodes && childNodes[i].tagName == 'IMG'){
+                            console.log("只有一层img");
+                            console.log(childNodes[i].src)
+                        }
                         for(let j=0;j<childNodes[i].childNodes.length;j++){
                             console.log(childNodes[i].childNodes[j].tagName)
                             if(childNodes[i].childNodes[j].tagName == 'IMG'){
