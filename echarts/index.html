@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>echarts</title>
+    <style>
+        .echarts-container {
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: top;
+            flex-wrap: wrap;
+        }
+
+        #equip-summary-situation {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #classroom-summary-situation {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #equip-pass-rate {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #fault-information {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #equip-summary-energy-rate {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #energy-and-rank {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="echarts-container">
+        <!-- 设备总情况 -->
+        <div id="equip-summary-situation" style="width:340px;height:240px;"></div>
+        <!-- 教室总情况 -->
+        <div id="classroom-summary-situation" style="width:340px;height:240px;"></div>
+        <!-- 设备及格率 -->
+        <div id="equip-pass-rate" style="width:300px;height:240px;"></div>
+        <!-- 错误信息列表 -->
+        <div id="fault-information" style="width:560px;height:240px;">这里是错误信息列表</div>
+        <!-- 设备总耗能占比 -->
+        <div id="equip-summary-energy-rate" style="width:440px;height:340px;"></div>
+        <!-- 能耗值和排名 -->
+        <div id="energy-and-rank" style="width:740px;height:340px;"></div>
+
+    </div>
+    
+    <script src="./echarts.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
