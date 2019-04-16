@@ -43,6 +43,59 @@
             border-radius: 10px;
         }
 
+        .falut-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .fault-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .fault-item:nth-of-type(even) {
+            background-color: #ececec;
+        }
+
+        .fault-item .equip-name {
+            color: #333;
+            font-size: 14px;
+            width: 20%;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .fault-item .classroom {
+            color: #333;
+            font-size: 14px;
+            width: 20%;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .fault-item .date {
+            color: #333;
+            font-size: 14px;
+            width: 20%;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .fault-item .detail {
+            color: #333;
+            font-size: 14px;
+            width: 40%;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+
         #equip-summary-energy-rate {
             border: 1px solid #ddd;
             padding: 10px;
@@ -51,6 +104,233 @@
         }
 
         #energy-and-rank {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #energy-suggest {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .energy-suggest-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .energy-suggest-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .energy-suggest-item:nth-of-type(even) {
+            background-color: #ececec;
+        }
+
+        .energy-suggest-item .reason-name {
+            color: #333;
+            font-size: 14px;
+            width: 40%;
+            height: 24px;
+            line-height: 24px;
+            text-align: left;
+        }
+
+        .energy-suggest-item .suggest {
+            color: #333;
+            font-size: 14px;
+            width: 60%;
+            height: 24px;
+            line-height: 24px;
+            text-align: left;
+        }
+
+        #average-classroom-air-quality {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .quality-text {
+            position: absolute;
+            bottom: 60px;
+            left: 138px;
+            font-size: 14px;
+            background-color: #336666;
+            color: #fff;
+            padding: 2px 20px;
+            border-radius: 20px;
+        }
+
+        .level-text {
+            position: absolute;
+            bottom: 25px;
+            left: 38px;
+            font-size: 12px;
+            background-color: #999999;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .pollution-text {
+            position: absolute;
+            bottom: 25px;
+            left: 180px;
+            font-size: 12px;
+            background-color: #999999;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        #comparison-table {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #comparison-table>.left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #comparison-table>.left>.level {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100px;
+            height: 55px;
+            font-size: 12px;
+        }
+
+        #comparison-table>.left>.level>.text {
+            width: 100%;
+            padding: 10px;
+            background-color: #fff;
+            color: #171717;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        #comparison-table>.left>.level>.color {
+            height: 100%;
+            width: 14px;
+        }
+
+        #comparison-table>.right {
+            padding-left: 10px;
+        }
+
+        #comparison-table>.right>div {
+            height: 54px;
+        }
+
+        #average-classroom-environment-situation {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .feature-bar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 14px;
+            background-color: #fff;
+            color: #171717;
+            border: 1px solid #bbbbbb;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            z-index: 999999999999999;
+        }
+
+        .temperature,
+        .humidity,
+        .pm2point5,
+        .decibel,
+        .light {
+            width: 159.6px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #009688;
+            color: #ffffff;
+        }
+
+        #environment-suggest {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .environment-suggest-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .environment-suggest-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .environment-suggest-item:nth-of-type(even) {
+            background-color: #ececec;
+        }
+
+        .environment-suggest-item .reason-name {
+            color: #333;
+            font-size: 14px;
+            width: 40%;
+            height: 24px;
+            line-height: 24px;
+            text-align: left;
+        }
+
+        .environment-suggest-item .suggest {
+            color: #333;
+            font-size: 14px;
+            width: 60%;
+            height: 24px;
+            line-height: 24px;
+            text-align: left;
+        }
+
+        #equip-out-of-order {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #classroom-out-of-order {
             border: 1px solid #ddd;
             padding: 10px;
             margin: 10px;
@@ -69,14 +349,156 @@
         <!-- 设备及格率 -->
         <div id="equip-pass-rate" style="width:300px;height:240px;"></div>
         <!-- 错误信息列表 -->
-        <div id="fault-information" style="width:560px;height:240px;">这里是错误信息列表</div>
+        <div id="fault-information" style="width:580px;height:240px;">
+            <div class="falut-title">近一周故障信息</div>
+            <div class="fault-item">
+                <div class="equip-name">智能网关</div>
+                <div class="classroom">教1-101</div>
+                <div class="date">2019/04/22</div>
+                <div class="detail">线路损坏，断开连接</div>
+            </div>
+            <div class="fault-item">
+                <div class="equip-name">灯光</div>
+                <div class="classroom">教1-101</div>
+                <div class="date">2019/04/22</div>
+                <div class="detail">线路损坏，断开连接</div>
+            </div>
+            <div class="fault-item">
+                <div class="equip-name">智能插座</div>
+                <div class="classroom">教2-101</div>
+                <div class="date">2019/04/23</div>
+                <div class="detail">线路损坏，断开连接</div>
+            </div>
+            <div class="fault-item">
+                <div class="equip-name">智能网关</div>
+                <div class="classroom">教1-201</div>
+                <div class="date">2019/04/23</div>
+                <div class="detail">线路损坏，断开连接</div>
+            </div>
+            <div class="fault-item">
+                <div class="equip-name">门磁</div>
+                <div class="classroom">教2-103</div>
+                <div class="date">2019/04/24</div>
+                <div class="detail">线路损坏，断开连接</div>
+            </div>
+            <div class="fault-item">
+                <div class="equip-name">灯光</div>
+                <div class="classroom">教2-103</div>
+                <div class="date">2019/04/25</div>
+                <div class="detail">线路损坏，断开连接</div>
+            </div>
+            <div class="fault-item">
+                <div class="equip-name">灯光</div>
+                <div class="classroom">教2-103</div>
+                <div class="date">2019/04/25</div>
+                <div class="detail">线路损坏，断开连接</div>
+            </div>
+        </div>
         <!-- 设备总耗能占比 -->
-        <div id="equip-summary-energy-rate" style="width:440px;height:340px;"></div>
+        <div id="equip-summary-energy-rate" style="width:420px;height:300px;"></div>
         <!-- 能耗值和排名 -->
-        <div id="energy-and-rank" style="width:740px;height:340px;"></div>
+        <div id="energy-and-rank" style="width:740px;height:300px;"></div>
+        <!-- 能耗总建议 -->
+        <div id="energy-suggest" style="width:420px;height:300px;">
+            <div class="energy-suggest-title">能耗总建议</div>
+            <div class="energy-suggest-item">
+                <div class="reason-name">灯光耗能最多</div>
+                <div class="suggest">建议检查是否有离开教室未关灯的情况</div>
+            </div>
+            <div class="energy-suggest-item">
+                <div class="reason-name">分贝传感仪耗能异常</div>
+                <div class="suggest">建议检查线路是否存在问题</div>
+            </div>
+        </div>
+        <!-- 教室平均空气质量 -->
+        <div style="position:relative;">
+            <div id="average-classroom-air-quality" style="width:300px;height:300px;"></div>
+            <div class="quality-text">优质</div>
+            <div class="level-text">空气质量等级 | 一级</div>
+            <div class="pollution-text">首要污染物 | 臭氧</div>
+        </div>
+        <!-- 空气质量对照表 -->
+        <div id="comparison-table" style="width:160px;height:300px;">
+            <div class="left">
+                <div class="level">
+                    <div class="text">
+                        <div>五级</div>
+                        <div>重度</div>
+                    </div>
+                    <div class="color" style="background-color:#CC0000;"></div>
+                </div>
+                <div class="level">
+                    <div class="text">
+                        <div>四级</div>
+                        <div>中度</div>
+                    </div>
+                    <div class="color" style="background-color:#003333;"></div>
+                </div>
+                <div class="level">
+                    <div class="text">
+                        <div>三级</div>
+                        <div>轻度</div>
+                    </div>
+                    <div class="color" style="background-color:#1296db;"></div>
+                </div>
+                <div class="level">
+                    <div class="text">
+                        <div>二级</div>
+                        <div>良</div>
+                    </div>
+                    <div class="color" style="background-color:#FF9900;"></div>
+                </div>
+                <div class="level">
+                    <div class="text">
+                        <div>一级</div>
+                        <div>优</div>
+                    </div>
+                    <div class="color" style="background-color:#009688;"></div>
+                </div>
+            </div>
+            <div class="right">
+                <div>250</div>
+                <div>200</div>
+                <div>150</div>
+                <div>100</div>
+                <div>50</div>
+                <div style="height:12px;">0</div>
+            </div>
+        </div>
+        <!-- 教室平均环境情况 -->
+        <div style="position:relative;">
+            <div class="feature-bar">
+                <div class="temperature active">温度</div>
+                <div class="humidity">湿度</div>
+                <div class="pm2point5">PM2.5</div>
+                <div class="decibel">分贝</div>
+                <div class="light">亮度</div>
+            </div>
+            <div id="average-classroom-environment-situation" style="width:800px;height:300px;"></div>
+        </div>
+        <!-- 环境总建议 -->
+        <div id="environment-suggest" style="width:300px;height:300px;">
+            <div class="environment-suggest-title">环境总建议</div>
+            <div class="environment-suggest-item">
+                <div class="reason-name">教室温度稍高</div>
+                <div class="suggest">建议打开窗户通风透气</div>
+            </div>
+            <div class="environment-suggest-item">
+                <div class="reason-name">相对湿度正常</div>
+                <div class="suggest">体感舒适</div>
+            </div>
+            <div class="environment-suggest-item">
+                <div class="reason-name">PM2.5指数良好</div>
+                <div class="suggest">适合户外运动</div>
+            </div>
+        </div>
+        <!-- 设备故障 -->
+        <div id="equip-out-of-order" style="width:800px;height:300px;"></div>
+        <!-- 教室故障 -->
+        <div id="classroom-out-of-order" style="width:800px;height:300px;"></div>
 
     </div>
-    
+
     <script src="./echarts.min.js"></script>
     <script src="./index.js"></script>
 </body>
