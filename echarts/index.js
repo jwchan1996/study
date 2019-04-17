@@ -287,7 +287,8 @@ function energyAndRank() {
       x: 'left'
     },
     tooltip: {
-      trigger: 'axis'
+      trigger: 'axis',
+      formatter: "{a} <br/>{b} : {c} kw"
     },
     legend: {
       orient: 'vertical',
@@ -398,7 +399,7 @@ function energyAndRank() {
       position: 'left', //---y轴位置
       offset: 0, //---y轴相对于默认位置的偏移
       type: 'value', //---轴类型，默认'category'
-      name: '耗能', //---轴名称
+      name: '耗能 kw', //---轴名称
       nameLocation: 'end', //---轴名称相对位置value
       nameTextStyle: { //---坐标轴名称样式
         color: "#000",
@@ -440,7 +441,7 @@ function energyAndRank() {
         //color:'red',              //---默认取轴线的颜色
       },
       splitLine: { //---grid 区域中的分隔线
-        show: true, //---是否显示，'category'类目轴不显示，此时我的y轴为类目轴，splitLine属性是有意义的
+        show: false, //---是否显示，'category'类目轴不显示，此时我的y轴为类目轴，splitLine属性是有意义的
         lineStyle: {
           color: '#666',
           width: 1,
