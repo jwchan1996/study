@@ -1,0 +1,177 @@
+<!--
+ * @Author: jwchan1996
+ * @Date: 2019-09-03 09:19:32
+ * @LastEditors: jwchan1996
+ * @LastEditTime: 2019-09-03 11:15:34
+ -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>星轨</title>
+  <style>
+    body,html{
+      font-family: "Microsoft YaHei";
+      -webkit-font-smoothing: antialiased;
+      color: #fff;
+      line-height: 1.5;
+      min-width: 1150px;
+      background-color: #212121;
+      font-size: 14px;
+      /* overflow-x: hidden; */
+    }
+
+    .background{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+    .fixed{
+      position: fixed;
+      top: -60%;
+    }
+    
+    #startrack{
+      height: 140%;
+      width: 100%;
+    }
+
+    .cover{
+      position: absolute;
+      bottom: -42%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to top,rgba(32,32,32,1) 30%,rgba(32,32,32,0) 100%);
+    }
+
+    .main{
+
+    }
+    
+    .intro {
+      color: #fff;
+      height: 100vh;
+      padding: 0;
+      animation: fadedown 1s cubic-bezier(.19,1,.22,1);
+      -webkit-animation: fadedown 1s cubic-bezier(.19,1,.22,1);
+      -ms-animation: fadedown 1s cubic-bezier(.19,1,.22,1);
+      -moz-animation: fadedown 1s cubic-bezier(.19,1,.22,1);
+    }
+    @keyframes fadedown{
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .intro .container {
+      animation: fadedown 3.5s cubic-bezier(.19,1,.22,1);
+      -webkit-animation: fadedown 3.5s cubic-bezier(.19,1,.22,1);
+      -ms-animation: fadedown 3.5s cubic-bezier(.19,1,.22,1);
+      -moz-animation: fadedown 3.5s cubic-bezier(.19,1,.22,1);
+    }
+
+    .container {
+      position: relative;
+      width: 1000px;
+      margin: 0 auto;
+      height: 100%;
+      padding: 20px 0;
+    }
+    @media screen and (min-width: 1400px){
+      .container {
+        width: 70%;
+      }
+    }
+    
+    .hello {
+      position: absolute;
+      bottom: 20%;
+      left: 0;
+    }
+    .hello .slogan {
+      font-size: 42px;
+      letter-spacing: .5em;
+      font-weight: 400;
+      line-height: 1.5em;
+    }
+    .hello h2 {
+      padding-top: .6em;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.5em;
+      letter-spacing: .2em;
+    }
+    .hello .circle {
+      float: left;
+      margin-right: 10px;
+      letter-spacing: 0;
+    }
+
+    .hello .circle span {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      background-color: #fff;
+      border-radius: 100%;
+      margin-right: 5px;
+    }
+    .hello .circle span:nth-child(1) {
+      background-color: #ff493f;
+    }
+    .hello .circle span:nth-child(2) {
+      background-color: #f7c900;
+    }
+    .hello .circle span:nth-child(3) {
+      background-color: #00ff37;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <canvas id="startrack" width="1373" height="1312"></canvas>
+    <div class="cover"></div>
+  </div>
+  <div class="main">
+    <div class="intro">
+      <div class="container">
+        <div class="hello">
+            <h1 class="slogan">你看那个人，Ta好像一条狗啊</h1>
+            <h2>
+              <div class="circle">
+                <span></span> 
+                <span></span> 
+                <span></span>
+              </div>
+              我爱盐酥鸡 / jwchan1996
+            </h2>
+        </div>
+      </div>
+    </div>
+    <div class="intro">
+        <div class="container">
+          <div class="hello">
+              <h1 class="slogan">你看那个人，Ta好像一条狗啊</h1>
+              <h2>
+                <div class="circle">
+                  <span></span> 
+                  <span></span> 
+                  <span></span>
+                </div>
+                飘香豆腐 / jwchan1996
+              </h2>
+          </div>
+        </div>
+      </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
