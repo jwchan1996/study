@@ -2,7 +2,7 @@
  * @Author: jwchan1996
  * @Date: 2019-09-03 09:19:32
  * @LastEditors: jwchan1996
- * @LastEditTime: 2019-09-03 11:14:35
+ * @LastEditTime: 2019-09-12 18:04:11
  */
 window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
   window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (t) {
@@ -80,9 +80,19 @@ function changeStar() {
 }
 
 function getMsg() {
-  let t = ["你看那个人，Ta好像一条狗啊", "我佛了", "给时光以生命<br>给岁月以文明", "你好，请多指教", "当你在凝视着网页的时候<br>网页也正在凝视着你", "苟……", "ご注文はねこですか？",
-      "平凡的日常正奇迹的发生着", "Lata<br>lulila<br>lulula<br>lulalila ♪♫", "ただの人間には<br>興味ありません！", "さあ、ゲームを始めよう",
-      "搞事！搞事！搞事！", "敬畏之心！", "赞美之心！", "我很好奇！", "欢迎大家光临星象馆<br>这里有着无论何时永远不会消失<br>美丽的无穷光辉<br>满天的星星等候着大家的到来"
+  let t = [
+    "你看那个人，Ta好像一条狗啊", 
+    "那时候时间很慢<br>慢到只能用一生去爱一个人", 
+    "给时光以生命<br>给岁月以文明", 
+    "你好，请多指教", 
+    "林深时见鹿<br>海蓝时见鲸<br>梦醒时见你", 
+    "出大问题……", 
+    "ご注文はねこですか？",
+    "平凡的日常正奇迹的发生着", 
+    "暗影猎手<br>准备就绪!!!", 
+    "ただの人間には<br>興味ありません！", "さあ、ゲームを始めよう",
+    "搞事！搞事！搞事！",  
+    "喜欢是淡淡的爱<br>爱是深深的喜欢",
     ],
     a = random(0, t.length - 1);
   document.querySelector(".slogan").innerHTML = t[a]
