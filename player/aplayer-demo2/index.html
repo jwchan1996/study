@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="Zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: #f1f1f1;
+            background-image: url('https://jwchan.cn/images/background_header05.png')
+        }
+        /* 添加以下样式，则定位左上角 */
+        /* .aplayer-fixed{
+            top: 0 !important;
+            z-index: 99999 !important;
+            height: 0 !important;
+        }
+        .aplayer-body{
+            top: 0px !important;
+            max-height: 66px !important;
+        }
+        .aplayer-fixed .aplayer-list{
+            margin-top: 66px !important; 
+            margin-bottom: 0 !important;
+            background-color: #fff;
+        } */
+        /* 添加以上样式，则定位左上角 */
+        /*以下样式使播放器定位在猫live2d的头顶*/
+        .aplayer-fixed{
+            bottom: 220px !important;
+            z-index: 99999 !important;
+        }
+        .aplayer-body{
+            bottom: 220px !important;
+        }
+        /**/
+        .ap-hover{
+            left: -66px !important;
+        }
+        .ap-hover:hover{
+            left: 0 !important;
+        }
+        /* 调整歌词总高度 */
+        .aplayer-lrc{
+            height: 80px !important;
+            background-color: rgba(0,0,0,0) !important;
+            z-index: 99999 !important;
+        }
+        /* 正在排队的歌词 */
+        .aplayer-lrc p{
+            color: #666 !important;
+        }
+        /* 正在唱歌的歌词 */
+        .aplayer-lrc p.aplayer-lrc-current{
+            color: #009688 !important;
+            font-size: 30px;
+            padding: 10px 0 !important;
+            /* line-height: 30px !important; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="aplayer">
+    </div>
+
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+    <script>
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            listFolded: false,
+            listMaxHeight: 90,
+            lrcType: 3,
+            fixed: true,
+            //音乐数据json数组
+            audio: [{
+                name: 'PLANET-ラムジ',
+                artist: 'ラムジ',
+                url: 'http://www.ytmp3.cn/down/49846.mp3',
+                cover: 'http://img.ytmp3.cn/image/29.jpg',
+                lrc: 'https://jwchan.cn/study/player/aplayer-demo/lrc.lrc'
+            },
+            {
+                name: '秋樱',
+                artist: '山口百恵',
+                url: 'http://www.ytmp3.cn/down/56259.mp3',
+                cover: 'http://q1.qlogo.cn/g?b=qq&nk=2425864224&s=100&t=1545840935',
+                lrc: 'https://jwchan.cn/study/player/aplayer-demo/lrc.lrc'
+            }]
+        });
+
+        if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+            document.querySelector('#aplayer').style.display = 'none'
+        }
+
+        ap.lrc.hide()
+        ap.on('play',()=>{
+            ap.lrc.show()
+        })
+        ap.on('pause',()=>{
+            ap.lrc.hide()
+        })
+
+        let aplayerBody = document.querySelector('.aplayer-body')
+        aplayerBody.className += " ap-hover";
+        document.querySelector('.aplayer-miniswitcher').onclick = () => {
+            if(aplayerBody.className.indexOf("ap-hover") >= 0 ){
+                aplayerBody.className = aplayerBody.className.replace("ap-hover","")
+            }else{
+                aplayerBody.className += " ap-hover";
+            }          
+        }
+    </script>
+</body>
+
+</html>
