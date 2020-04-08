@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    
+    img {
+      filter: grayscale(100%);
+      transition: all 3s;      
+    }
+
+    img:hover {
+      cursor: pointer;
+      filter: none;
+      transition: all 5s;
+    }
+
+    img:hover + p {
+      cursor: pointer;
+      opacity: 1;
+      transition: all 5s;
+    }
+
+    p {
+      position: absolute;
+      top: 0px;
+      left: 100px;
+      opacity: 0;
+      font-size: 60px;
+      font-weight: bold;
+      width: 60px;
+      transition: all 3s;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <img src="./image/mainvisual.png" alt="">
+    <p>暴走萝莉</p>
+  </div>
+</body>
+</html>
